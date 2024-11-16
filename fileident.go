@@ -4,7 +4,7 @@
  * { Dude that converted this into a library: xplshn }
  *-<==============================================>-*/
 
-package fileident
+package fil
 
 import (
 	"fmt"
