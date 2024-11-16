@@ -1,3 +1,3 @@
-module github.com/file-go/fil
+module github.com/xplshn/fileident
 
-go 1.20
+go 1.23.2
