@@ -1,3 +1,9 @@
+/*-<==============================================>-*\
+ * { MIT Licence                                     }
+ * { Maintainer: Joeky <joeky5888@gmail.com>         }
+ * { Dude that converted this into a library: xplshn }
+ *-<==============================================>-*/
+
 package fileident
 
 func hasPrefix(s []byte, prefix string) bool {

@@ -1,6 +1,6 @@
 /*-<==============================================>-*\
- * { MIT Licence									 }
- * { Maintainer: Joeky <joeky5888@gmail.com>	 	 }
+ * { MIT Licence                                     }
+ * { Maintainer: Joeky <joeky5888@gmail.com>         }
  * { Dude that converted this into a library: xplshn }
  *-<==============================================>-*/
 
