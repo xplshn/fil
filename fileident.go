@@ -228,6 +228,8 @@ func regularFile(filename string) {
 		fmt.Print("HTML document")
 	case lenb > 32 && (HasPrefix(contentByte, "<?xml version")):
 		fmt.Print("XML document")
+	case lenb > 32 && HasPrefix(contentByte, "<svg"):
+		fmt.Print("SVG image data")
 	}
 }
 
