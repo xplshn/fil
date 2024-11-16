@@ -1,4 +1,4 @@
-package fileident // yass yass, utils.go but funny
+package fil // yass yass, utils.go but funny name
 
 func HasPrefix(s []byte, prefix string) bool {
 	return len(s) >= len(prefix) && Equal(s[:len(prefix)], prefix)
