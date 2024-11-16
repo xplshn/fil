@@ -1,4 +1,4 @@
-package fileident // identifies funny zip files
+package fil // identifies funny zip files
 
 import (
 	"archive/zip"
