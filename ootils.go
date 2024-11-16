@@ -1,10 +1,10 @@
-package fileident // yass yass, utils.go but funny
+package fileident
 
-func HasPrefix(s []byte, prefix string) bool {
-	return len(s) >= len(prefix) && Equal(s[:len(prefix)], prefix)
+func hasPrefix(s []byte, prefix string) bool {
+	return len(s) >= len(prefix) && equal(s[:len(prefix)], prefix)
 }
 
-func Equal(a []byte, b string) bool {
+func equal(a []byte, b string) bool {
 	if len(a) != len(b) {
 		return false
 	}

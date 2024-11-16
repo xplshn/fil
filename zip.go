@@ -1,8 +1,7 @@
-package fileident // identifies funny zip files
+package fileident
 
 import (
 	"archive/zip"
-	"fmt"
 	"os"
 	"strings"
 )
@@ -10,15 +9,13 @@ import (
 func doZip(file *os.File) string {
 	info, err := file.Stat()
 	if err != nil {
-		fmt.Println("Error getting file info:", err)
-		return ("File error")
+		return "file error: " + err.Error()
 	}
 
 	var buf [60]byte
 	_, err = file.Read(buf[:])
 	if err != nil {
-		fmt.Println(err)
-		return "File error."
+		return "file error: " + err.Error()
 	}
 
 	str := string(buf[:])
@@ -33,13 +30,13 @@ func doZip(file *os.File) string {
 	default:
 		f, err := os.Open(file.Name())
 		if err != nil {
-			return "Error opening file"
+			return "error opening file: " + err.Error()
 		}
 		defer f.Close()
 
 		zipReader, err := zip.NewReader(f, info.Size())
 		if err != nil {
-			return "Unknown file type"
+			return "unknown file type"
 		}
 
 		for _, zipFile := range zipReader.File {
@@ -53,13 +50,13 @@ func doZip(file *os.File) string {
 			case "mimetype":
 				file, err := zipFile.Open()
 				if err != nil {
-					return "Error opening file"
+					return "error opening file: " + err.Error()
 				}
 				defer file.Close()
 				first20Bytes := make([]byte, 20)
 				_, err = file.Read(first20Bytes)
 				if err != nil {
-					return "Error reading first 20 bytes"
+					return "error reading first 20 bytes: " + err.Error()
 				}
 				if strings.Contains(string(first20Bytes), "epub") {
 					return "EPUB document"
